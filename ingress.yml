@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    annotations:
+      ingress.kubernetes.io/app-root: /
+      ingress.kubernetes.io/rewrite-target: /   
+      kubernetes.io/ingress.class: nginx
+
+
+    name: nodeappp
+    labels:
+      app: nodeapp
+spec:
+    rules:
+      - host: a4f29f83b960b4c05bae74a7f7b9f885-1322102504.us-east-2.elb.amazonaws.com
+        http:
+            paths:
+            - backend:
+                service:
+                  name: nodeapp-service
+                  port:
+                    number: 80
+              path: /
+              
+    
