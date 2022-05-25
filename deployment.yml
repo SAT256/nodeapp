@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: sateesh258/nodeapp:latest
+        image: 349896715591.dkr.ecr.us-east-1.amazonaws.com/nodeapp123:latest
         ports:
         - containerPort: 3000
